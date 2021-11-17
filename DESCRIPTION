@@ -53,7 +53,8 @@ Imports:
     rprojroot,
     stringi,
     tibble,
-    withr
+    withr,
+    RcppTOML
 Suggests: 
     devtools,
     knitr,

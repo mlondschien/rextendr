@@ -30,6 +30,9 @@
 register_extendr <- function(path = ".", quiet = FALSE, force = FALSE, compile = NA) {
   pkg_name <- pkg_name(path)
 
+  cargo_toml_path <- file.path(path, "src", "rust", "Cargo.toml")
+  module_name <- RcppTOML::parseTOML(cargo_toml_path)$package$name
+
   if (!isTRUE(quiet)) {
     ui_i("Generating extendr wrapper functions for package: {.pkg {pkg_name}}.")
   }
